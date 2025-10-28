@@ -7,7 +7,9 @@ import * as geo from './geoService';
 // Declare TensorFlow.js global variable
 declare var tf: any;
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY! });
+const ai = new GoogleGenAI({
+    apiKey: import.meta.env.VITE_GEMINI_API_KEY!,
+});
 
 // --- Direct Fetch Helper ---
 // Replaces the unreliable public proxy system with direct API calls.
